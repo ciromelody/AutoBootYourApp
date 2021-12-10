@@ -32,7 +32,7 @@ public class ReceiverAutoBoot extends BroadcastReceiver {
         Log.d("BOOT"," Importante!!!Da impostazioni del telefono autorizzare questa app all riavvio");
         try {
             long restartTime = 1000*15;
-            Intent intents = mContext.getPackageManager().getLaunchIntentForPackage(mContext.getPackageName());
+            Intent intents = mContext.getPackageManager().getLaunchIntentForPackage(mContext.getPackageName());//qui puoi mettere anche il pacchetto di un'altra app
             PendingIntent restartIntent = PendingIntent.getActivity(mContext, 0, intents, PendingIntent.FLAG_ONE_SHOT);
             AlarmManager mgr = (AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE);
 
